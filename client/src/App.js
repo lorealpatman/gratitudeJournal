@@ -43,7 +43,7 @@ class App extends Component {
             </div>
 
             <div className="landing-text">
-              <h1>Gratitude Journal</h1>
+              <h1>Thanks</h1>
               <p className="pLanding" style={{ marginBottom: "80px" }}>
                 “Feeling gratitude and not expressing it is like wrapping a
                 present and not giving it.” —William Arthur Ward
@@ -57,7 +57,11 @@ class App extends Component {
         <div>
           <div
             id="Entries"
-            style={{ paddingBottom: "50px", paddingTop: "50px" }}
+            style={{
+              marginBottom: "55px",
+              paddingTop: "50px",
+              paddingBotom: "50px"
+            }}
           >
             <h2 className="section-heading text-uppercase">
               <img
@@ -77,7 +81,7 @@ class App extends Component {
             </div>
           </div>
 
-          <div id="Add" style={{ paddingBottom: "50px", paddingTop: "50px" }}>
+          <div id="Add" style={{ paddingBottom: "50px", marginTop: "30px" }}>
             <div>
               <AddEntryForm />
             </div>
