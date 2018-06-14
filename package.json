@@ -1,0 +1,33 @@
+{
+  "name": "simpleapp",
+  "version": "1.0.0",
+  "description": "My simple CRUD app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorealpatman/simpleApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lorealpatman/simpleApp/issues"
+  },
+  "homepage": "https://github.com/lorealpatman/simpleApp#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "create-react-app": "^1.5.2",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "joi": "^13.4.0",
+    "mongodb": "^3.0.10",
+    "morgan": "^1.9.0",
+    "react-router-dom": "^4.3.1"
+  }
+}
