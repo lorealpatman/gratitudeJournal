@@ -63,7 +63,7 @@ ul {
   position: fixed;
   top: 0;
   z-index: 1000;
-  width: 100%;
+  width: 100vw;
 }
 
 li {
@@ -84,9 +84,9 @@ li a:hover:not(.active) {
   color: yellowgreen;
 }
 
-.activeNav {
+/* .activeNav {
   background-color: #4caf50;
-}
+} */
 
 a {
   font-family: "Courgette", cursive;
@@ -108,11 +108,12 @@ a {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   transition: all 0.9s;
+  font-weight: bold;
 }
 
 /* DIVS AND CONTAINERS */
 section#entries {
-  background-color: #212529;
+  /* background-color: #212529; */
   background-image: url("/imgs/img3.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -120,7 +121,7 @@ section#entries {
   padding: 150px 0;
   min-width: 768px;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-size: cover;
@@ -149,7 +150,7 @@ section#entries {
   height: 100%;
 }
 
-.form {
+.entryForm {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }

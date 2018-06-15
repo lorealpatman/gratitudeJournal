@@ -15,7 +15,7 @@ class App extends Component {
           <div className="landing-image" style={{ marginBottom: "50px" }}>
             <div className="topnav">
               <div id="overlay" />
-              <nav class="navbar">
+              <nav className="navbar">
                 <ul>
                   <li>
                     {" "}
@@ -81,7 +81,7 @@ class App extends Component {
             </div>
           </div>
 
-          <div id="Add" style={{ paddingBottom: "80px", marginTop: "50px" }}>
+          <div id="Add" style={{ paddingBottom: "80px" }}>
             <div>
               <AddEntryForm />
             </div>

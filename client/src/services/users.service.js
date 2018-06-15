@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let baseUrl = "http://localhost:8080/api/";
+let baseUrl = "http://localhost:8080";
 baseUrl += "/api";
 
 export const post = data => {

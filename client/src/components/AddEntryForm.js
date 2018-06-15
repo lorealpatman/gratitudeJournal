@@ -7,7 +7,7 @@ class AddEntryForm extends React.Component {
     this.state = {
       firstName: "",
       lastName: "",
-      date: "",
+      date: new Date(), //     <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
       entry: ""
     };
 
@@ -16,14 +16,20 @@ class AddEntryForm extends React.Component {
   }
 
   onChange(event) {
-    this.setState({ value: event.target.value });
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
   }
 
   handleAdd(event) {
     event.preventDefault();
     const user = {
       firstName: this.state.firstName,
-      lastName: this.state.lasttName,
+      lastName: this.state.lastName,
       date: this.state.date,
       entry: this.state.entry
     };
@@ -77,69 +83,54 @@ class AddEntryForm extends React.Component {
 
                 <div className="row">
                   <div className="container-fluid">
-                    <form id="entryForm" novalidate="novalidate">
+                    <form id="entryForm">
                       <div className="row">
                         <div className="col-md-4 col-md-offset-4">
                           <div className="form-group">
                             <input
                               className="form-control"
-                              id="firstName"
+                              name="firstName"
                               type="text"
                               value={this.state.firstName}
                               onChange={this.onChange}
                               placeholder="Your First Name *"
-                              required="required"
-                              data-validation-required-message="Please enter your first name."
                             />
-                            <p className="help-block text-danger" />
                           </div>
                           <div className="form-group">
                             <input
                               className="form-control"
-                              id="lastName"
+                              name="lastName"
                               type="text"
                               value={this.state.lastName}
                               onChange={this.onChange}
                               placeholder="Your Last Name *"
-                              required="required"
-                              data-validation-required-message="Please enter your Last Name."
                             />
-                            <p className="help-block text-danger" />
                           </div>
                           <div className="form-group">
                             <input
                               className="form-control"
-                              id="date"
                               type="text"
                               value={this.state.date}
                               onChange={this.onChange}
                               placeholder="Today's Date i.e 06/13/2018 *"
-                              required="required"
-                              data-validation-required-message="Please enter today's date."
                             />
-                            <p className="help-block text-danger" />
                           </div>
                         </div>
                         <div className="col-md-4 col-md-offset-4">
                           <div className="form-group">
                             <textarea
                               className="form-control"
-                              id="message"
+                              name="entry"
                               value={this.state.entry}
                               onChange={this.onChange}
                               placeholder="What you're grateful for *"
-                              required="required"
-                              data-validation-required-message="Please enter an entry."
                               rows="6"
                             />
-                            <p className="help-block text-danger" />
                           </div>
                         </div>
                         <div className="clearfix" />
                         <div className="col-lg-12 text-center">
-                          <div id="success" />
                           <button
-                            id="addEntry"
                             className="button btn btn-success btn-lg "
                             onClick={this.handleAdd}
                           >

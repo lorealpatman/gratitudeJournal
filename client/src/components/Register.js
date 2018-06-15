@@ -13,53 +13,48 @@ class Register extends React.Component {
               <div className="row">
                 <div className="col-md-4 col-md-offset-4">
                   <div className="form-group">
-                    <label for="firstName">First Name:</label>
+                    <label htmlFor="firstName">First Name:</label>
                     <input
                       type="text"
                       className="form-control"
-                      id="firstName"
                       placeholder="Jane"
-                      name="first name"
+                      name="firstName"
                     />
                   </div>
                   <div className="form-group">
-                    <label for="lastName">Last Name:</label>
+                    <label htmlFor="lastName">Last Name:</label>
                     <input
                       type="text"
                       className="form-control"
-                      id="lastName"
                       placeholder="Doe"
-                      name="last name"
+                      name="lastName"
                     />
                   </div>
                   <div className="form-group">
-                    <label for="email">Email:</label>
+                    <label htmlFor="email">Email:</label>
                     <input
                       type="email"
                       className="form-control"
-                      id="email"
                       placeholder="Enter email"
                       name="email"
                     />
                   </div>
                   <div className="form-group">
-                    <label for="pwd">Password:</label>
+                    <label htmlFor="pwd">Password:</label>
                     <input
                       type="password"
                       className="form-control"
-                      id="pwd"
                       placeholder="Enter password"
-                      name="pwd"
+                      name="password"
                     />
                   </div>
                   <div className="form-group">
-                    <label for="conPwd">Confirm Password:</label>
+                    <label htmlFor="conPwd">Confirm Password:</label>
                     <input
                       type="password"
                       className="form-control"
-                      id="conPwd"
                       placeholder="Confirm password"
-                      name="conPwd"
+                      name="confirmPassword"
                     />
                   </div>
 
