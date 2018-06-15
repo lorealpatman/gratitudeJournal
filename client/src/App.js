@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="App">
+        <div className="App" id="Home">
           <div className="landing-image" style={{ marginBottom: "50px" }}>
             <div className="topnav">
               <div id="overlay" />
@@ -35,7 +35,7 @@ class App extends Component {
                     {" "}
                     <a href="#Register">Register</a>
                   </li>
-                  <li style={{ float: "right" }}>
+                  <li className="pull-right" style={{ float: "right" }}>
                     <a href="#logout">Logout</a>
                   </li>
                 </ul>
@@ -44,7 +44,7 @@ class App extends Component {
 
             <div className="landing-text">
               <h1>Thanks</h1>
-              <p className="pLanding" style={{ marginBottom: "80px" }}>
+              <p className="pLanding" style={{ marginBottom: "70px" }}>
                 “Feeling gratitude and not expressing it is like wrapping a
                 present and not giving it.” —William Arthur Ward
               </p>
@@ -58,9 +58,9 @@ class App extends Component {
           <div
             id="Entries"
             style={{
-              marginBottom: "55px",
+              marginBottom: "70px",
               paddingTop: "50px",
-              paddingBotom: "50px"
+              paddingBotom: "95px"
             }}
           >
             <h2 className="section-heading text-uppercase">
@@ -81,7 +81,7 @@ class App extends Component {
             </div>
           </div>
 
-          <div id="Add" style={{ paddingBottom: "50px", marginTop: "30px" }}>
+          <div id="Add" style={{ paddingBottom: "80px", marginTop: "50px" }}>
             <div>
               <AddEntryForm />
             </div>

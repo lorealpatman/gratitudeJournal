@@ -1,8 +1,49 @@
 import React from "react";
+import * as ajaxcalls from "../services/users.service";
 
 class AddEntryForm extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      firstName: "",
+      lastName: "",
+      date: "",
+      entry: ""
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
+  }
+
+  onChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleAdd(event) {
+    event.preventDefault();
+    const user = {
+      firstName: this.state.firstName,
+      lastName: this.state.lasttName,
+      date: this.state.date,
+      entry: this.state.entry
+    };
+
+    ajaxcalls
+      .post(user)
+      .then(data => {
+        console.log(data);
+        this.setState({ user: data.items });
+        alert("Entry Added");
+        this.setState({
+          firstName: "",
+          lastName: "",
+          date: "",
+          entry: ""
+        })((window.location.href = "/App"));
+      })
+      .catch(() => {
+        console.log("error");
+      });
   }
   render() {
     return (
@@ -44,6 +85,8 @@ class AddEntryForm extends React.Component {
                               className="form-control"
                               id="firstName"
                               type="text"
+                              value={this.state.firstName}
+                              onChange={this.onChange}
                               placeholder="Your First Name *"
                               required="required"
                               data-validation-required-message="Please enter your first name."
@@ -54,7 +97,9 @@ class AddEntryForm extends React.Component {
                             <input
                               className="form-control"
                               id="lastName"
-                              type="email"
+                              type="text"
+                              value={this.state.lastName}
+                              onChange={this.onChange}
                               placeholder="Your Last Name *"
                               required="required"
                               data-validation-required-message="Please enter your Last Name."
@@ -66,6 +111,8 @@ class AddEntryForm extends React.Component {
                               className="form-control"
                               id="date"
                               type="text"
+                              value={this.state.date}
+                              onChange={this.onChange}
                               placeholder="Today's Date i.e 06/13/2018 *"
                               required="required"
                               data-validation-required-message="Please enter today's date."
@@ -78,6 +125,8 @@ class AddEntryForm extends React.Component {
                             <textarea
                               className="form-control"
                               id="message"
+                              value={this.state.entry}
+                              onChange={this.onChange}
                               placeholder="What you're grateful for *"
                               required="required"
                               data-validation-required-message="Please enter an entry."
@@ -92,7 +141,7 @@ class AddEntryForm extends React.Component {
                           <button
                             id="addEntry"
                             className="button btn btn-success btn-lg "
-                            type="submit"
+                            onClick={this.handleAdd}
                           >
                             Add Entry
                           </button>

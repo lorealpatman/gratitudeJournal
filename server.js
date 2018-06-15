@@ -29,8 +29,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 //Add more routers here
-app.get("/api/comments", (req, res) => {
-  db.collection("comments")
+app.get("/api/users", (req, res) => {
+  db.collection("users")
     .find()
     .toArray()
     .then(result => {
@@ -38,8 +38,8 @@ app.get("/api/comments", (req, res) => {
     });
 });
 
-app.post("/api/comments", (req, res) => {
-  db.collection("comments")
+app.post("/api/users", (req, res) => {
+  db.collection("users")
     .insertOne(req.body)
     .then(result => {
       const id = result.insertedId.toString();

@@ -40,6 +40,24 @@ const Entries = () => (
           </div>
         </div>
       </div>
+      <br />
+      <div className="panelCorners">
+        <div className="panel-body">
+          <div>
+            <label>Name:</label> Frank Kime
+          </div>
+          <div>
+            <label>Date:</label> 06/15/2018
+          </div>
+          <div>
+            <label>Entry: </label>{" "}
+            <span>
+              I'm grateful for money money money money money money money money
+              money
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   </React.Fragment>
 );
