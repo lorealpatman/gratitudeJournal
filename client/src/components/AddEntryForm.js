@@ -121,12 +121,12 @@ class AddEntryForm extends React.Component {
                               name="entry"
                               value={this.state.entry}
                               onChange={this.onChange}
-                              placeholder="What you're grateful for *"
+                              placeholder="I am grateful for... *"
                               rows="6"
                             />
                           </div>
                         </div>
-                        <div className="clearfix" />
+
                         <div className="col-lg-12 text-center">
                           <button
                             className="button btn btn-success btn-lg "

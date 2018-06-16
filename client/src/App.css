@@ -58,7 +58,7 @@ p.pLanding {
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 12px;
+  padding: 4px;
   overflow: hidden;
   background-color: rgba(17, 17, 17, 0.8);
   position: fixed;
@@ -75,7 +75,7 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 10px 10px;
+  padding: 14px 14px;
   text-decoration: none;
 }
 
@@ -113,7 +113,7 @@ section#entries {
   background-repeat: no-repeat;
   background-position: center;
   color: white;
-  padding: 150px;
+  padding: 150px 0;
   height: 100%;
   width: 100%;
   /* Create the parallax scrolling effect */

@@ -82,7 +82,7 @@ class App extends Component {
             </div>
           </div>
 
-          <div id="Add" style={{ paddingBottom: "80px" }}>
+          <div id="Add" style={{ paddingBottom: "80px", paddingTop: "50px" }}>
             <div>
               <AddEntryForm />
             </div>

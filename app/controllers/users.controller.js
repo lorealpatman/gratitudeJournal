@@ -25,7 +25,6 @@ function getAll(req, res) {
 }
 
 function post(req, res) {
-  req.body.createdDate = new Date();
   usersService
     .post(req.body)
     .then(id => {

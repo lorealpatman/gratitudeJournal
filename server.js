@@ -9,8 +9,8 @@ const dotenv = require("dotenv");
 const app = express();
 dotenv.config();
 
-// const password = process.env.MLAB_PASSWORD;
-// const userName = process.env.MLAB_USER;
+const password = process.env.MLAB_PASSWORD;
+const userName = process.env.MLAB_USER;
 
 const corsConfig = {
   origin: "http://localhost:3000",
@@ -22,7 +22,7 @@ const corsConfig = {
 };
 
 const port = 3001;
-const mongoUrl = `mongodb://crudUser:Crud321!@ds056009.mlab.com:56009/c52crud`;
+const mongoUrl = `mongodb://${userName}:${password}@ds056009.mlab.com:56009/c52crud`;
 let dbName = "c52crud";
 
 MongoClient.connect(

@@ -9,11 +9,11 @@ function Entries(props) {
               <div className="panelCorners">
                 <div className="panel-body">
                   <div>
-                    <label>Name:</label>
+                    <label>Name: </label>
                     {`${users.firstName} ${users.lastName}`}
                   </div>
                   <div>
-                    <label>Date:</label> {`${users.date}`}
+                    <label>Date: </label> {`${users.date}`}
                   </div>
                   <div>
                     <label>Entry: </label> <span>{`${users.entry}`}</span>
