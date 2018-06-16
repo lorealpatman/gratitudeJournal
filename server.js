@@ -1,17 +1,28 @@
 const express = require("express");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const MongoClient = require("mongodb");
 const assert = require("assert");
 const dotenv = require("dotenv");
-
+// const router = require("./app/routes/index");
 const app = express();
 dotenv.config();
 
-const password = process.env.MLAB_PASSWORD;
-const userName = process.env.MLAB_USER;
+// const password = process.env.MLAB_PASSWORD;
+// const userName = process.env.MLAB_USER;
+
+const corsConfig = {
+  origin: "http://localhost:3000",
+  methods: "GET,PUT,POST,DELETE",
+  credentials: true,
+  allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept,Cookie",
+  preflightContinue: false,
+  optionsSuccessStatus: 204
+};
+
 const port = 3001;
-const mongoUrl = `mongodb://${userName}:${password}@ds056009.mlab.com:56009/c52crud`;
+const mongoUrl = `mongodb://crudUser:Crud321!@ds056009.mlab.com:56009/c52crud`;
 let dbName = "c52crud";
 
 MongoClient.connect(
@@ -24,6 +35,7 @@ MongoClient.connect(
   }
 );
 
+app.use(cors(corsConfig));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -50,6 +62,7 @@ app.post("/api/users", (req, res) => {
     });
 });
 
+// app.use(router);
 app.use((req, res) => {
   console.log(req);
   res.sendStatus(404);

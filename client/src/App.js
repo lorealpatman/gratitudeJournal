@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 // import Landing from "../src/components/Landing";
 import AddEntryForm from "../src/components/AddEntryForm";
-import Entries from "../src/components/Entries";
 import Register from "../src/components/Register";
 import Footer from "../src/components/Footer";
+import EntriesContainer from "../src/components/EntriesContainer";
 
 import "./App.css";
 
@@ -76,8 +76,9 @@ class App extends Component {
                 style={{ width: "45px", height: "45px" }}
               />
             </h2>
+
             <div>
-              <Entries />
+              <EntriesContainer />
             </div>
           </div>
 

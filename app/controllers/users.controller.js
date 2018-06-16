@@ -1,6 +1,6 @@
 const responses = require("../models/responses");
 const usersService = require("../services/users.service");
-const apiPrefix = "/api/people";
+const apiPrefix = "/api/users";
 
 module.exports = {
   getAll: getAll,
@@ -15,7 +15,7 @@ function getAll(req, res) {
     .getAll()
     .then(users => {
       const responseModel = new responses.ItemsResponse();
-      responseModel.items = people;
+      responseModel.items = users;
       res.json(responseModel); // 200 Response
     })
     .catch(err => {
@@ -26,7 +26,6 @@ function getAll(req, res) {
 
 function post(req, res) {
   req.body.createdDate = new Date();
-  req.body.modifiedDate = new Date();
   usersService
     .post(req.body)
     .then(id => {

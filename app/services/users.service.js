@@ -27,16 +27,16 @@ function getAll() {
     });
 }
 
-function getById(id) {
-  return conn
-    .db()
-    .collection("users")
-    .findOne({ _id: new ObjectId(id) })
-    .then(user => {
-      user._id = user._id.toString(); // convert ObjectId back to string
-      return user;
-    });
-}
+// function getById(id) {
+//   return conn
+//     .db()
+//     .collection("users")
+//     .findOne({ _id: new ObjectId(id) })
+//     .then(user => {
+//       user._id = user._id.toString(); // convert ObjectId back to string
+//       return user;
+//     });
+// }
 
 ////POST/////
 function post(user) {

@@ -26,7 +26,6 @@ class AddEntryForm extends React.Component {
   }
 
   handleAdd(event) {
-    event.preventDefault();
     const user = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
@@ -38,14 +37,14 @@ class AddEntryForm extends React.Component {
       .post(user)
       .then(data => {
         console.log(data);
-        this.setState({ user: data.items });
+        this.setState({ user: data });
         alert("Entry Added");
         this.setState({
           firstName: "",
           lastName: "",
           date: "",
           entry: ""
-        })((window.location.href = "/App"));
+        })((window.location.href = "#"));
       })
       .catch(() => {
         console.log("error");
@@ -111,8 +110,7 @@ class AddEntryForm extends React.Component {
                               className="form-control"
                               type="text"
                               value={this.state.date}
-                              onChange={this.onChange}
-                              placeholder="Today's Date i.e 06/13/2018 *"
+                              readOnly
                             />
                           </div>
                         </div>
