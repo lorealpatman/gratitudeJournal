@@ -20,6 +20,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "create-react-app": "^1.5.2",
@@ -28,6 +29,7 @@
     "joi": "^13.4.0",
     "mongodb": "^3.0.10",
     "morgan": "^1.9.0",
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "react-scroll": "^1.7.9"
   }
 }

@@ -13,47 +13,42 @@ class Register extends React.Component {
               <div className="row">
                 <div className="col-md-4 col-md-offset-4">
                   <div className="form-group">
-                    <label htmlFor="firstName">First Name:</label>
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="Jane"
+                      placeholder="Your First Name*"
                       name="firstName"
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="lastName">Last Name:</label>
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="Doe"
+                      placeholder="Your Last Name*"
                       name="lastName"
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="email">Email:</label>
                     <input
                       type="email"
                       className="form-control"
-                      placeholder="Enter email"
+                      placeholder="Enter Your Email*"
                       name="email"
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="pwd">Password:</label>
                     <input
                       type="password"
                       className="form-control"
-                      placeholder="Enter password"
+                      placeholder="Enter Your Password*"
                       name="password"
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="conPwd">Confirm Password:</label>
                     <input
                       type="password"
                       className="form-control"
-                      placeholder="Confirm password"
+                      placeholder="Confirm Your Password*"
                       name="confirmPassword"
                     />
                   </div>
