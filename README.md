@@ -1,5 +1,5 @@
 # simpleApp
 
-This is a Gratitude Journal App that I'm currently working on. As of 6/14/2018, I have the UI mostly complete. I'm currently working on the functionality.
+This is a Gratitude Journal App that I'm currently working on. You can add Gratitude Entries and they render on the page. My next step is to add additional features. Considering a login feature but the main idea is a community gratitude journal. I think it's important for people to know what other people are grateful for.
 
-Web Scraper is used to render a different gratitude quote per page load.
+Web Scraper is used to render a different gratitude quote (from external site), on the landing page,  per page load.
