@@ -7,7 +7,7 @@ class AddEntryForm extends React.Component {
     this.state = {
       firstName: "",
       lastName: "",
-      date: new Date(), //     <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      date: new Date(), //      {this.state.date.toLocaleTimeString()}
       entry: ""
     };
 

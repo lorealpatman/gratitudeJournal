@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import Landing from "../src/components/Landing";
 import AddEntryForm from "../src/components/AddEntryForm";
-import Register from "../src/components/Register";
+// import Register from "../src/components/Register";
 import Footer from "../src/components/Footer";
 import EntriesContainer from "../src/components/EntriesContainer";
 import {
@@ -11,34 +11,41 @@ import {
   animateScroll as scroll,
   scroller
 } from "react-scroll";
-// import * as scrape from "../app/services/QuoteScraper.js";
+import * as scrape from "../src/services/quotes.service";
 
 import "./App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { quotes: "" };
+    this.state = { quotes: [], activeQuote: "" };
     this.scrollToTop = this.scrollToTop.bind(this);
   }
 
   componentDidMount() {
-    // scrape
-    //   .getAll()
-    //   .then(data => {
-    //     this.setState({ quotes: data });
-    //     console.log("Quotes Displayed", data);
-    //   })
-    //   .catch(() => {
-    //     console.log("Error Loading Entries");
-    //   });
+    scrape
+      .getAll()
+      .then(json => {
+        this.setState({ quotes: JSON.parse(json) }, () => {
+          let randomIndex = Math.floor(
+            Math.random() * this.state.quotes.length
+          );
+          // console.log(data[quoteArr]);
+          this.setState({ activeQuote: randomIndex });
+        });
+
+        // console.log("Quotes Displayed", data);
+      })
+      .catch(() => {
+        console.log("Error Loading Quotes");
+      });
 
     Events.scrollEvent.register("begin", function() {
-      console.log("begin", arguments);
+      // console.log("begin", arguments);
     });
 
     Events.scrollEvent.register("end", function() {
-      console.log("end", arguments);
+      // console.log("end", arguments);
     });
   }
   scrollToTop() {
@@ -51,33 +58,6 @@ class App extends Component {
       smooth: "easeInOutQuart"
     });
   }
-  scrollToWithContainer() {
-    let goToContainer = new Promise((resolve, reject) => {
-      Events.scrollEvent.register("end", () => {
-        resolve();
-        Events.scrollEvent.remove("end");
-      });
-
-      scroller.scrollTo("scroll-container", {
-        duration: 800,
-        delay: 0,
-        smooth: "easeInOutQuart"
-      });
-    });
-
-    goToContainer.then(() =>
-      scroller.scrollTo("scroll-container-second-element", {
-        duration: 800,
-        delay: 0,
-        smooth: "easeInOutQuart",
-        containerId: "scroll-container"
-      })
-    );
-  }
-  // componentWillUnmount() {
-  //   Events.scrollEvent.remove("begin");
-  //   Events.scrollEvent.remove("end");
-  // }
 
   render() {
     return (
@@ -120,12 +100,12 @@ class App extends Component {
                       activeClass="active"
                       className="add"
                       to="Add"
-                      onClick={() => scroll.scrollTo(2400)}
+                      onClick={() => scroll.scrollTo(2600)}
                     >
                       Add Entry
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     {" "}
                     <Link
                       activeClass="active"
@@ -137,8 +117,8 @@ class App extends Component {
                     >
                       Register
                     </Link>
-                  </li>
-                  <li className="pull-right" style={{ float: "right" }}>
+                  </li> */}
+                  {/* <li className="pull-right" style={{ float: "right" }}>
                     <Link
                       activeClass="active"
                       className="logout"
@@ -149,7 +129,7 @@ class App extends Component {
                     >
                       Logout
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </nav>
             </div>
@@ -157,11 +137,27 @@ class App extends Component {
             <div className="landing-text">
               <h1>Thanks</h1>
               <p className="pLanding" style={{ marginBottom: "70px" }}>
-                “Feeling gratitude and not expressing it is like wrapping a
-                present and not giving it.” —William Arthur Ward
+                {this.state.activeQuote &&
+                  this.state.quotes[this.state.activeQuote].quote}
+                {this.state.activeQuote && console.log(this.state)}
               </p>
               <br />
-              <button className="button btn btn-success btn-lg">Login</button>
+
+              <button
+                className="button btn btn-success btn-lg"
+                title="Add Entry"
+              >
+                {" "}
+                <Link
+                  type="button"
+                  activeClass="active"
+                  className="gratitude"
+                  to="Add"
+                  onClick={() => scroll.scrollTo(2600)}
+                >
+                  Gratitude
+                </Link>
+              </button>
             </div>
           </div>
         </Element>
@@ -205,7 +201,7 @@ class App extends Component {
             </div>
           </Element>
 
-          <Element
+          {/* <Element
             className="element"
             name="Register"
             style={{
@@ -229,7 +225,7 @@ class App extends Component {
             <div>
               <Register />
             </div>
-          </Element>
+          </Element> */}
         </div>
         <div className="footer">
           <Footer />

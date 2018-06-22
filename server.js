@@ -5,8 +5,9 @@ const cookieParser = require("cookie-parser");
 const MongoClient = require("mongodb");
 const assert = require("assert");
 const dotenv = require("dotenv");
-// const router = require("./app/routes/index");
+
 const app = express();
+const quoteScraper = require("../simpleApp/app/services/QuoteScraper");
 dotenv.config();
 
 const password = process.env.MLAB_PASSWORD;
@@ -60,6 +61,12 @@ app.post("/api/users", (req, res) => {
     .catch(err => {
       res.status(500).send(err.message);
     });
+});
+
+app.get("/api/quotes", (req, res) => {
+  quoteScraper.getAll().then(result => {
+    res.status(200).json(result);
+  });
 });
 
 // app.use(router);
